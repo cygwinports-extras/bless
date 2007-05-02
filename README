@@ -5,23 +5,24 @@ a sequence of bytes. It is written in C# and uses the Gtk# bindings for the
 GTK+ toolkit.
 
 Runtime requirements:
-  cygwin-1.5.21-1
-  glade-sharp2-2.8.3-1
-  gtk-sharp2-2.8.3-1
-  mono-1.1.16.1-1
+  cygwin-1.5.24-2
+  glade-sharp2-2.10.0-1
+  glib-sharp2-2.10.0-1
+  gtk-sharp2-2.10.0-1
+  mono-1.2.3.1-2
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.21-1
-  autoconf2.5-2.59-3
-  automake1.9-1.9.6-1
-  cygport-0.2.5-1
-  gawk-3.1.5-2
-  gcc-core-3.4.4-1
-  make-3.80-1
-  pkg-config-0.20-1
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  cygport-0.3.1-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  make-3.81-1
+  pkg-config-0.21-1
   scrollkeeper-0.3.14-2
-  sed-4.1.4-1
+  sed-4.1.5-2
 
 Canonical website:
   http://home.gna.org/bless/
@@ -32,60 +33,98 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack bless-0.4.1-X-src.tar.bz2
+  unpack bless-0.5.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./bless-0.4.1-X.cygport all
+  cygport ./bless-0.5.0-X.cygport all
 
 This will create:
-  /usr/src/bless-0.4.1-X-src.tar.bz2
-  /usr/src/bless-0.4.1-X.tar.bz2
+  /usr/src/bless-0.5.0-X-src.tar.bz2
+  /usr/src/bless-0.5.0-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary package:
 
   /etc/postinstall/bless.sh
+  /etc/preremove/bless.sh
   /usr/bin/bless
-  /usr/lib/bless-0.4.1/bin/bless.exe
-  /usr/lib/bless-0.4.1/data/bless-16-bytes-per-row.layout
-  /usr/lib/bless-0.4.1/data/bless-48x48.png
-  /usr/lib/bless-0.4.1/data/bless-about.png
-  /usr/lib/bless-0.4.1/data/bless-all-number-bases.layout
-  /usr/lib/bless-0.4.1/data/bless-default.layout
-  /usr/lib/bless-0.4.1/data/default-preferences.xml
-  /usr/lib/bless-0.4.1/data/help_script.sh
+  /usr/lib/bless-0.5.0/bin/Bless.Buffers.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Gui.Areas.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Gui.Drawers.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Gui.Plugins.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Gui.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Plugins.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Tools.Export.Plugins.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Tools.Export.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Tools.Find.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Tools.dll
+  /usr/lib/bless-0.5.0/bin/Bless.Util.dll
+  /usr/lib/bless-0.5.0/bin/bless.exe
+  /usr/lib/bless-0.5.0/data/bless-16-bytes-per-row.layout
+  /usr/lib/bless-0.5.0/data/bless-48x48.png
+  /usr/lib/bless-0.5.0/data/bless-about.png
+  /usr/lib/bless-0.5.0/data/bless-all-number-bases.layout
+  /usr/lib/bless-0.5.0/data/bless-default.layout
+  /usr/lib/bless-0.5.0/data/bless.glade
+  /usr/lib/bless-0.5.0/data/default-preferences.xml
+  /usr/lib/bless-0.5.0/data/help_script.sh
   /usr/share/applications/bless.desktop
-  /usr/share/doc/Cygwin/bless-0.4.1.README
-  /usr/share/doc/bless-0.4.1/AUTHORS
-  /usr/share/doc/bless-0.4.1/COPYING
-  /usr/share/doc/bless-0.4.1/ChangeLog
-  /usr/share/doc/bless-0.4.1/INSTALL
-  /usr/share/doc/bless-0.4.1/NEWS
-  /usr/share/doc/bless-0.4.1/README
-  /usr/share/doc/bless-0.4.1/developer/bless.xmi
-  /usr/share/doc/bless-0.4.1/user/bless-manual.xml
-  /usr/share/doc/bless-0.4.1/user/figures/bless_area_focus.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_display_tag.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_edit_mode.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_goto.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_layout_example1.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_layout_oha.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_number_base.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_preferences_general.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_preferences_session.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_search_find.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_search_replace.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_start_window.png
-  /usr/share/doc/bless-0.4.1/user/figures/bless_tab_close.png
-  /usr/share/doc/bless-0.4.1/user/legal.xml
+  /usr/share/doc/Cygwin/bless-0.5.0.README
+  /usr/share/doc/bless-0.5.0/ABOUT-NLS
+  /usr/share/doc/bless-0.5.0/AUTHORS
+  /usr/share/doc/bless-0.5.0/COPYING
+  /usr/share/doc/bless-0.5.0/ChangeLog
+  /usr/share/doc/bless-0.5.0/INSTALL
+  /usr/share/doc/bless-0.5.0/NEWS
+  /usr/share/doc/bless-0.5.0/README
+  /usr/share/doc/bless-0.5.0/README.packaging
+  /usr/share/doc/bless-0.5.0/bless.spec
+  /usr/share/doc/bless-0.5.0/developer/bless.xmi
+  /usr/share/doc/bless-0.5.0/user/bless-manual.xml
+  /usr/share/doc/bless-0.5.0/user/ch01.html
+  /usr/share/doc/bless-0.5.0/user/ch02.html
+  /usr/share/doc/bless-0.5.0/user/ch02s02.html
+  /usr/share/doc/bless-0.5.0/user/ch03.html
+  /usr/share/doc/bless-0.5.0/user/ch03s02.html
+  /usr/share/doc/bless-0.5.0/user/ch04.html
+  /usr/share/doc/bless-0.5.0/user/ch04s02.html
+  /usr/share/doc/bless-0.5.0/user/ch04s03.html
+  /usr/share/doc/bless-0.5.0/user/ch04s04.html
+  /usr/share/doc/bless-0.5.0/user/ch04s05.html
+  /usr/share/doc/bless-0.5.0/user/ch05.html
+  /usr/share/doc/bless-0.5.0/user/ch05s02.html
+  /usr/share/doc/bless-0.5.0/user/ch05s03.html
+  /usr/share/doc/bless-0.5.0/user/ch05s04.html
+  /usr/share/doc/bless-0.5.0/user/ch06.html
+  /usr/share/doc/bless-0.5.0/user/ch07.html
+  /usr/share/doc/bless-0.5.0/user/figures/bless_area_focus.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_display_tag.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_edit_mode.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_export_dialog.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_goto.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_layout_example1.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_layout_oha.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_number_base.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_preferences_general.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_preferences_session.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_search_find.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_search_replace.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_select_range.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_start_window.png
+  /usr/share/doc/bless-0.5.0/user/figures/bless_tab_close.png
+  /usr/share/doc/bless-0.5.0/user/index.html
+  /usr/share/doc/bless-0.5.0/user/legal.xml
   /usr/share/omf/bless/bless-manual.omf
   /usr/share/pixmaps/bless-48x48.png
 
 ------------------
 
 Port Notes:
+
+----- version 0.5.0-1 -----
+Version bump.
 
 ----- version 0.4.1-1 -----
 Initial release for Cygwin.
