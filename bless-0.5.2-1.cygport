@@ -1,0 +1,27 @@
+inherit mono gnome2
+
+DESCRIPTION="GNOME hex editor"
+HOMEPAGE="http://home.gna.org/bless/"
+SRC_URI="http://download.gna.org/${PN}/${P}.tar.gz"
+
+DIFF_EXCLUDES="*.rpath ConfigureDefines.cs"
+
+src_compile() {
+	cd ${S}
+	gnome2_autoreconf
+	lndirs
+	cd ${B}
+	cygconf
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodir /usr/share/gnome/help/${PN}
+	mv ${D}/usr/share/{doc/bless/user,gnome/help/${PN}/C}
+	sed -i -e "s#doc/bless/user#gnome/help/${PN}/C#g" ${D}/usr/share/omf/bless/bless-manual.omf
+
+	rm -fr ${D}/usr/share/doc/${PN}/
+}
