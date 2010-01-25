@@ -19,9 +19,8 @@ src_install() {
 	cd ${B}
 	cyginstall
 
-	dodir /usr/share/gnome/help/${PN}
-	mv ${D}/usr/share/{doc/bless/user,gnome/help/${PN}/C}
-	sed -i -e "s#doc/bless/user#gnome/help/${PN}/C#g" ${D}/usr/share/omf/bless/bless-manual.omf
-
-	rm -fr ${D}/usr/share/doc/${PN}/
+	# fix so that yelp lists it in the TOC (under Utilities)
+	mv ${D}/usr/share/omf/bless/bless-{manual,C}.omf
+	sed -i -e 's|\(identifier url=\)".*"|\1"file:///usr/share/doc/bless/user/bless-manual.xml"|' \
+		${D}/usr/share/omf/bless/bless-C.omf
 }

@@ -1,5 +1,5 @@
 category: Editors Gnome
-requires: glade-sharp2 glib-sharp2 gtk-sharp2 mono
+requires: mono mono-glade-sharp2.0 mono-glib-sharp2.0 mono-gtk-sharp2.0 mono-pango-sharp2.0
 sdesc: "GTK+ binary (hex) editor"
 ldesc: "Bless is a binary (hex) editor, a program that enables you to
 edit files as a sequence of bytes. It is written in C# and uses the Gtk#
